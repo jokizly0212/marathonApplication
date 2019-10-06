@@ -14,8 +14,6 @@ class RegisterViewModel(application: Application): BaseViewModel(application) {
     fun registerUser(user: User) {
         launch {
             val result = userDao.insertUser(user)
-            println("LOLOLOLOLOLO")
-            println(result)
         }
     }
 }

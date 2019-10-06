@@ -1,42 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="125dp">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:scaleType="fitXY"
-        android:contentDescription="Request Image"/>
-
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="request"
+            type="fi.metropolia.marathon.model.Request" />
+        <variable
+            name="requestId"
+            type="Integer" />
+        <variable
+            name="listener"
+            type="fi.metropolia.marathon.view.RequestClickListener" />
+    </data>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:onClick="@{view->listener.onRequestClick(requestId, view)}"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="125dp">
 
-        <TextView
-            android:id="@+id/requestName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="requestName" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:imageUrl="@{request.image_url}"
+            android:contentDescription="Request Image"/>
 
-        <TextView
-            android:id="@+id/requestStartPoint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="requestStartPoint" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/requestStartDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="requestStartDate" />
+            <TextView
+                android:id="@+id/requestCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{request.name}" />
+
+            <TextView
+                android:id="@+id/requestDeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{request.startDate}" />
+
+            <TextView
+                android:id="@+id/requestStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{request.startPoint}" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</layout>
