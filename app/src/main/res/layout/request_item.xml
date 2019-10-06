@@ -22,21 +22,21 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/requestTitle"
+            android:id="@+id/requestName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="requestTitle" />
+            android:text="requestName" />
 
         <TextView
-            android:id="@+id/requestCustomer"
+            android:id="@+id/requestStartPoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="requestCustomer" />
+            android:text="requestStartPoint" />
 
         <TextView
-            android:id="@+id/requestDeadline"
+            android:id="@+id/requestStartDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="requestDeadline" />
+            android:text="requestStartDate" />
     </LinearLayout>
 </LinearLayout>

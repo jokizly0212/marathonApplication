@@ -34,9 +34,9 @@ class RequestListAdapter(private val requestList: ArrayList<Request>):
                 RequestsFragmentDirections.actionRequestsFragmentToRequestDetail()
             Navigation.findNavController(it).navigate(action)
         }
-        holder.view.requestTitle.text = requestList[position].destination
-        holder.view.requestCustomer.text = requestList[position].customer
-        holder.view.requestDeadline.text = requestList[position].deadline
+        holder.view.requestName.text = requestList[position].name
+        holder.view.requestStartPoint.text = requestList[position].startPoint
+        holder.view.requestStartDate.text = requestList[position].startDate
     }
 
     class RequestViewHolder(var view: View): RecyclerView.ViewHolder(view)
