@@ -1,5 +1,7 @@
 package fi.metropolia.marathon.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class Request(
@@ -19,4 +21,14 @@ data class Request(
     val endPoint: String,
     @SerializedName("image_url")
     val image_url: String
+)
+
+@Entity
+data class User(
+    @PrimaryKey
+    val userName: String,
+    val age: Int,
+    val weight: Double,
+    val height: Double,
+    val address: String
 )
