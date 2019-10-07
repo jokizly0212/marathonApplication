@@ -1,22 +1,18 @@
 <resources>
     <string name="app_name">Marathon</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="prompt_username">Username</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-
     <string name="userName">Username</string>
     <string name="age">Age</string>
     <string name="weight">Weight(kg)</string>
     <string name="height">Height(cm)</string>
     <string name="address">Address</string>
     <string name="register_btn">Let\'s Start</string>
+
+    <string name="eventName">event name</string>
+    <string name="eventStartDate">start date</string>
+    <string name="eventDescription">description</string>
+    <string name="eventAmount">amount</string>
+    <string name="eventStartPoint">start point</string>
+    <string name="eventEndPoint">end point</string>
+    <string name="eventImage">image</string>
 </resources>
