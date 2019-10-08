@@ -1,10 +1,14 @@
 package fi.metropolia.marathon.model
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.Relation
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class Request(
+    @PrimaryKey
     @SerializedName("id")
     val id: Int,
     @SerializedName("name")
@@ -31,4 +35,12 @@ data class User(
     val weight: Double,
     val height: Double,
     val address: String
+)
+
+class UserWithRequests(
+    @Embedded
+    val user: User? = null,
+
+    @Relation(parentColumn = "userName", entityColumn = "transporterName")
+    val requestList: List<Request>
 )

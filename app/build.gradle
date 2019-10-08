@@ -13,6 +13,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "fi.metropolia.deliverytracker"
         minSdkVersion 15
         targetSdkVersion 29

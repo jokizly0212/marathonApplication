@@ -36,7 +36,7 @@ class RegisterFragment: Fragment() {
             val user = User(userNameText.text.toString(), ageText.text.toString().toInt(), weightText.text.toString().toDouble(), heightText.text.toString().toDouble(), addressText.text.toString())
             viewModel.registerUser(user)
             val action =
-                RegisterFragmentDirections.actionRegisterFragmentToRequestsFragment()
+                RegisterFragmentDirections.actionRegisterFragmentToRequestsFragment2()
             Navigation.findNavController(it).navigate(action)
         }
     }

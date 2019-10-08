@@ -1,4 +1,4 @@
-package fi.metropolia.deliverytracker.util
+package fi.metropolia.marathon.util
 
 import android.content.Context
 import android.widget.ImageView
