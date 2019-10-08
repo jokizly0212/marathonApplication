@@ -16,14 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/requestDetail"
-        android:name="fi.metropolia.marathon.view.DetailFragment"
+        android:name="fi.metropolia.marathon.view.RequestDetail"
         android:label="fragment_request_detail"
-        tools:layout="@layout/fragment_request_detail" >
-        <argument
-            android:name="requestId"
-            app:argType="integer"
-            android:defaultValue="1" />
-    </fragment>
+        tools:layout="@layout/fragment_request_detail" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="fi.metropolia.marathon.view.RegisterFragment"

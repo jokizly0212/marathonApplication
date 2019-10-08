@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import fi.metropolia.marathon.R
 import fi.metropolia.marathon.databinding.RequestItemBinding
@@ -36,9 +35,6 @@ class RequestListAdapter(private val requestList: ArrayList<Request>):
     }
 
     override fun onRequestClick(requestId: Int, v: View) {
-        val action = RequestsFragmentDirections.actionRequestsFragmentToRequestDetail()
-        action.requestId = requestId
-        Navigation.findNavController(v).navigate(action)
     }
 
     class RequestViewHolder(var view: RequestItemBinding): RecyclerView.ViewHolder(view.root)

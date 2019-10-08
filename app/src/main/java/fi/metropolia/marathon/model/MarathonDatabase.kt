@@ -5,9 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [User::class, Request::class], version = 1)
+@Database(entities = [User::class], version = 1)
 abstract class MarathonDatabase: RoomDatabase() {
-    abstract fun requestDao(): RequestDao
+    //abstract fun requestDao(): RequestDao
     abstract fun userDao(): UserDao
 
     companion object {
