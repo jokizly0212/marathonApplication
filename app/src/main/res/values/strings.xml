@@ -19,4 +19,6 @@
     <string name="height">Height(cm)</string>
     <string name="address">Address</string>
     <string name="register_btn">Let\'s Start</string>
+    <string name="getting_started_des">Please fill in the form below to continue.</string>
+    <string name="popular_event">Popular Events</string>
 </resources>

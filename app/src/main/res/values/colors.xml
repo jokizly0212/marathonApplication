@@ -6,5 +6,6 @@
 
     <color name="marathonPrimary">#8955ff</color>
     <color name="marathonGrey">#C0C0C0</color>
+    <color name="marathonBlack">#0E0720</color>
 
 </resources>

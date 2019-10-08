@@ -13,18 +13,18 @@
             name="listener"
             type="fi.metropolia.marathon.view.RequestClickListener" />
     </data>
-
-
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="80dp"
-        android:onClick="@{view->listener.onRequestClick(requestId, view)}">
+        app:cardCornerRadius="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
@@ -35,16 +35,19 @@
                 android:scaleType="centerCrop" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/requestCustomer"
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/marathonBlack"
+                    android:layout_marginBottom="8dp"
                     android:text="@{request.name}" />
 
                 <TextView
@@ -52,17 +55,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
+                    android:textColor="@color/marathonBlack"
                     android:text="@{request.startDate}" />
 
                 <TextView
                     android:id="@+id/requestStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/marathonBlack"
                     android:text="@{request.startPoint}" />
 
             </LinearLayout>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
 </layout>
