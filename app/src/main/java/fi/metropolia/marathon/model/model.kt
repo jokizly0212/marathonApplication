@@ -4,6 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.Relation
+import com.google.android.gms.maps.model.LatLng
 import com.google.gson.annotations.SerializedName
 
 @Entity
@@ -44,3 +45,18 @@ class UserWithRequests(
     @Relation(parentColumn = "userName", entityColumn = "transporterName")
     val requestList: List<Request>
 )
+
+class Route {
+    var distance: Distance? = null
+    var duration: Duration? = null
+    var endAddress: String? = null
+    var endLocation: LatLng? = null
+    var startAddress: String? = null
+    var startLocation: LatLng? = null
+
+    var points: List<LatLng>? = null
+}
+
+class Duration(var text: String, var value: Int)
+
+class Distance(var text: String, var value: Int)

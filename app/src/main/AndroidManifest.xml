@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fi.metropolia.marathon">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-feature android:name="android.hardware.sensor.magnetometer" android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAIPgT5dHYfsxotUXOT-IA5fK2-4GrrpWE" />
         <activity android:name="fi.metropolia.marathon.view.MainActivity"
             android:theme="@style/SplashTheme">
         <intent-filter>
@@ -19,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.OnboardingScreen" />
     </application>
 
 </manifest>

@@ -17,12 +17,14 @@
     <fragment
         android:id="@+id/requestDetail"
         android:name="fi.metropolia.marathon.view.DetailFragment"
-        android:label="fragment_request_detail"
-        tools:layout="@layout/fragment_request_detail" >
+        android:label="fragment_request_detail">
         <argument
             android:name="requestId"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_requestDetail_to_googleMapFragment"
+            app:destination="@id/googleMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -32,4 +34,22 @@
             android:id="@+id/action_registerFragment_to_requestsFragment2"
             app:destination="@id/requestsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/googleMapFragment"
+        android:name="fi.metropolia.marathon.view.GoogleMapFragment"
+        android:label="fragment_google_map"
+        tools:layout="@layout/fragment_google_map" >
+        <argument
+            android:name="detination"
+            app:argType="string"
+            android:defaultValue="Siltakatu 11, 02770 Espoo" />
+        <action
+            android:id="@+id/action_googleMapFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="fi.metropolia.marathon.view.FinishFragment"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish" />
 </navigation>

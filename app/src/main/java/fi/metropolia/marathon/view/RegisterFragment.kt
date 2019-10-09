@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import fi.metropolia.marathon.R
 import fi.metropolia.marathon.model.User
+import fi.metropolia.marathon.util.DataTemp
 import fi.metropolia.marathon.viewmodel.RegisterViewModel
 import kotlinx.android.synthetic.main.fragment_register.*
 
@@ -38,6 +39,12 @@ class RegisterFragment: Fragment() {
             val action =
                 RegisterFragmentDirections.actionRegisterFragmentToRequestsFragment2()
             Navigation.findNavController(it).navigate(action)
+
+            DataTemp.userName = userNameText.text.toString()
+            DataTemp.age = ageText.text.toString().toInt()
+            DataTemp.weight = weightText.text.toString().toDouble()
+            DataTemp.height = heightText.text.toString().toDouble()
+            DataTemp.address = addressText.text.toString()
         }
     }
 
