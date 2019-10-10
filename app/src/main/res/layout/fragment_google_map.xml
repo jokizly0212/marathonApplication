@@ -18,17 +18,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/history"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
-
-    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -38,17 +27,6 @@
         android:src="@drawable/step"
         app:layout_constraintStart_toEndOf="@+id/distanceTextView"
         app:layout_constraintTop_toBottomOf="@+id/mapFragment" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/fire"
-        app:layout_constraintStart_toEndOf="@+id/distanceTextView"
-        app:layout_constraintTop_toBottomOf="@+id/current_step_value" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -87,18 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/distanceTextView" />
 
-    <TextView
-        android:id="@+id/durationText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="5dp"
-        android:text="Duration"
-        android:textColor="@color/colorBlack"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentStepTextView" />
+
 
     <Button
         android:id="@+id/finishButton"
@@ -116,19 +83,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/currentStepTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="Duration"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/distanceText" />
 
     <TextView
         android:id="@+id/curren_step_title"
@@ -155,31 +109,5 @@
         android:textSize="32sp"
         app:layout_constraintStart_toEndOf="@+id/distanceTextView"
         app:layout_constraintTop_toBottomOf="@+id/curren_step_title" />
-
-    <TextView
-        android:id="@+id/caloriesTexView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/calories_burned"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/current_step_value" />
-
-    <TextView
-        android:id="@+id/calories_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="5dp"
-        android:text="0 calories"
-        android:textColor="@color/colorBlack"
-        android:textSize="32sp"
-        app:layout_constraintStart_toEndOf="@+id/distanceTextView"
-        app:layout_constraintTop_toBottomOf="@+id/caloriesTexView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

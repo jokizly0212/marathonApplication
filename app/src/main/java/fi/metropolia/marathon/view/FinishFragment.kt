@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import fi.metropolia.marathon.R
 import fi.metropolia.marathon.util.DataTemp
 import kotlinx.android.synthetic.main.fragment_finish.*
@@ -32,8 +33,12 @@ class FinishFragment: Fragment() {
         startPointValue.text = DataTemp.startPoint
         endPointValue.text = DataTemp.endPoint
         distanceTextValue.text = DataTemp.distance
-        durationTextValue.text = DataTemp.duration
         textStepCountValue.text = DataTemp.stepCount.toString()
+
+        back_to_home.setOnClickListener {
+            val action = FinishFragmentDirections.actionFinishFragmentToRequestsFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 

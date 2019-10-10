@@ -13,5 +13,5 @@ object DataTemp {
     var endPoint: String = ""
     var stepCount: Float = 0.0f
     var distance: String = ""
-    var duration: String = ""
+
 }

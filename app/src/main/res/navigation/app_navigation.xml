@@ -51,5 +51,9 @@
         android:id="@+id/finishFragment"
         android:name="fi.metropolia.marathon.view.FinishFragment"
         android:label="fragment_finish"
-        tools:layout="@layout/fragment_finish" />
+        tools:layout="@layout/fragment_finish" >
+        <action
+            android:id="@+id/action_finishFragment_to_requestsFragment"
+            app:destination="@id/requestsFragment" />
+    </fragment>
 </navigation>

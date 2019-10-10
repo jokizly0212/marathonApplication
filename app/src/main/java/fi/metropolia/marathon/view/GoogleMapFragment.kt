@@ -140,11 +140,15 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
 
         for (route in routeList) {
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(route.startLocation, 16f))
-            durationText.text = route.duration?.text
+
+
+
             distanceText.text = route.distance?.text
 
+
+
             DataTemp.distance = distanceText.text.toString()
-            DataTemp.duration = durationText.text.toString()
+
 
             originMarkers.add(
                 mMap.addMarker(

@@ -85,6 +85,8 @@ class DirectionFinder(internal val listener: DirectionFinderListener, private va
                 val jsonEndLocation = jsonLeg.getJSONObject("end_location")
                 val jsonStartLocation = jsonLeg.getJSONObject("start_location")
 
+
+
                 route.distance = Distance(jsonDistance.getString("text"), jsonDistance.getInt("value"))
                 route.duration = Duration(jsonDuration.getString("text"), jsonDuration.getInt("value"))
                 route.endAddress = jsonLeg.getString("end_address")
