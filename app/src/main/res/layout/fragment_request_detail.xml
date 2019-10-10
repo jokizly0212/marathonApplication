@@ -10,19 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
         tools:context=".view.DetailFragment">
 
-
-            <ImageView
-                android:id="@+id/requestImage"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:imageUrl="@{request.image_url}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+        <ImageView
+            android:id="@+id/requestImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:imageUrl="@{request.image_url}"/>
 
         <Button
             android:id="@+id/acceptButton"
@@ -33,9 +28,9 @@
             android:layout_marginLeft="40dp"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/rounded_corner_btn"
-            android:text="@string/accept"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounded_corner_btn_dark"
+            android:text="@string/join_event"
             android:textColor="#fff"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -47,6 +42,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:text="@string/eventName"
@@ -59,6 +58,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/start_date"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +72,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/participants"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +85,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/location"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +98,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:text="@string/destination"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -104,21 +119,28 @@
                 app:layout_constraintStart_toEndOf="@+id/StartDateTextView"
                 app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
-            <TextView
-                android:id="@+id/descriptionText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="14sp"
-                android:text="@string/eventDescription"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/startDateText" />
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/eventDescription"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startDateText" />
 
             <TextView
                 android:id="@+id/amountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginStart="15dp"
                 android:textSize="14sp"

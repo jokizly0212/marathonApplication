@@ -7,29 +7,51 @@
     android:layout_height="match_parent"
     tools:context="fi.metropolia.marathon.view.RequestsFragment">
 
+    <ImageView
+        android:id="@+id/top_title"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/title_background"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/titlebg"
+        android:scaleType="fitEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/page_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/marathon_events"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/top_title"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/requestRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/page_title" />
+        app:layout_constraintTop_toBottomOf="@+id/top_title" />
 
     <TextView
         android:id="@+id/listError"
@@ -41,18 +63,19 @@
         android:layout_marginRight="48dp"
         android:lines="2"
         android:textAlignment="center"
-        android:text="Error loading requests Please check your internet connection"
+        android:text="@string/error_connection"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/requestRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/requestRecyclerView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/requestRecyclerView"
-        app:layout_constraintStart_toStartOf="@+id/requestRecyclerView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/listError"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

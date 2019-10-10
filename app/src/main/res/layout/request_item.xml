@@ -22,7 +22,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
         android:onClick="@{view->listener.onRequestClick(requestId, view)}">
@@ -47,18 +47,19 @@
 
                 <TextView
                     android:id="@+id/requestCustomer"
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
-                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="5dp"
                     android:text="@{request.name}" />
 
                 <TextView
                     android:id="@+id/requestDeadline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="5dp"
                     android:text="@{request.startDate}" />
 
                 <TextView

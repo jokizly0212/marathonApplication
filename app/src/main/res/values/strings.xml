@@ -10,11 +10,11 @@
     <string name="marathon_events">Marathon Events</string>
 
     <string name="eventName">event name</string>
-    <string name="eventStartDate">start date</string>
+    <string name="eventStartDate">Start Date</string>
     <string name="eventDescription">description</string>
     <string name="eventAmount">amount</string>
-    <string name="eventStartPoint">start point</string>
-    <string name="eventEndPoint">end point</string>
+    <string name="eventStartPoint">Location</string>
+    <string name="eventEndPoint">Destination</string>
     <string name="eventImage">image</string>
     <string name="finish">Finish</string>
 
@@ -25,8 +25,14 @@
     <string name="location">Location</string>
     <string name="destination">Destination</string>
     <string name="accept">Accept</string>
-    <string name="current_step_title">Current step</string>
+    <string name="current_step_title">Steps</string>
     <string name="current_step_value">0</string>
     <string name="distance">Distance</string>
     <string name="duration">Duration</string>
+    <string name="error_connection">Error loading requests Please check your internet connection</string>
+    <string name="join_event">JOIN EVENT</string>
+    <string name="end_event">End Event</string>
+    <string name="your_stats">Your Stats</string>
+    <string name="calories_burned">Calories Burned</string>
+    <string name="back_to_home">BACK TO HOME</string>
 </resources>
