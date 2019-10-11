@@ -26,9 +26,9 @@
 * Google Map API for showing the marathon path, estimated time for the whole marathon event
 
 3. ##### Demonstration
-App's screenshots
+* App's screenshots
 
-![Demo](https://drive.google.com/file/d/1bqrGlUq2IODIPgx9Q_GhqTGwciB4tsfd/view?usp=sharing)
+![final](https://user-images.githubusercontent.com/33486067/66649151-21be0080-ec36-11e9-86e0-beea751e4105.png)
 
 4. ##### How to use the app
 * You can download the zip file above to download the whole project
