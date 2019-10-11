@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import fi.metropolia.marathon.R
 import fi.metropolia.marathon.model.User
-import fi.metropolia.marathon.util.DataTemp
+import fi.metropolia.marathon.util.MarathonData
 import fi.metropolia.marathon.viewmodel.RegisterViewModel
-import kotlinx.android.synthetic.main.fragment_register.*
+import kotlinx.android.synthetic.main.fragment_getting_started.*
 
 class RegisterFragment: Fragment() {
 
@@ -25,7 +23,7 @@ class RegisterFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        return inflater.inflate(R.layout.fragment_getting_started, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,17 +32,17 @@ class RegisterFragment: Fragment() {
         registerButton.setOnClickListener {
 
             viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
-            val user = User(userNameText.text.toString(), ageText.text.toString().toInt(), weightText.text.toString().toDouble(), heightText.text.toString().toDouble(), addressText.text.toString())
-            viewModel.registerUser(user)
-            val action =
+            val userDetail = User(userNameText.text.toString(), ageText.text.toString().toInt(), weightText.text.toString().toDouble(), heightText.text.toString().toDouble(), addressText.text.toString())
+            viewModel.registerUser(userDetail)
+            val actionOnActivity =
                 RegisterFragmentDirections.actionRegisterFragmentToRequestsFragment2()
-            Navigation.findNavController(it).navigate(action)
+            Navigation.findNavController(it).navigate(actionOnActivity)
 
-            DataTemp.userName = userNameText.text.toString()
-            DataTemp.age = ageText.text.toString().toInt()
-            DataTemp.weight = weightText.text.toString().toDouble()
-            DataTemp.height = heightText.text.toString().toDouble()
-            DataTemp.address = addressText.text.toString()
+            MarathonData.userName = userNameText.text.toString()
+            MarathonData.age = ageText.text.toString().toInt()
+            MarathonData.weight = weightText.text.toString().toDouble()
+            MarathonData.height = heightText.text.toString().toDouble()
+            MarathonData.address = addressText.text.toString()
         }
     }
 

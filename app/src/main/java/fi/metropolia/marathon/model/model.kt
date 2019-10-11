@@ -37,15 +37,6 @@ data class User(
     val height: Double,
     val address: String
 )
-
-class UserWithRequests(
-    @Embedded
-    val user: User? = null,
-
-    @Relation(parentColumn = "userName", entityColumn = "transporterName")
-    val requestList: List<Request>
-)
-
 class Route {
     var distance: Distance? = null
     var duration: Duration? = null

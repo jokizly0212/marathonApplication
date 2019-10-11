@@ -12,9 +12,6 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -25,13 +22,10 @@ import com.google.android.gms.maps.model.*
 import fi.metropolia.marathon.R
 import fi.metropolia.marathon.model.Route
 import fi.metropolia.marathon.util.DirectionFinder
-import kotlinx.android.synthetic.main.fragment_google_map.*
+import kotlinx.android.synthetic.main.fragment_map.*
 import java.io.UnsupportedEncodingException
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.Navigation
-import fi.metropolia.marathon.util.DataTemp
-import kotlinx.android.synthetic.main.activity_main.*
+import fi.metropolia.marathon.util.MarathonData
 
 //import sun.jvm.hotspot.utilities.IntArray
 
@@ -39,12 +33,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 
-class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListener ,
+class GoogleMapFragment : Fragment(), OnMapReadyCallback, NavigationListener ,
     SensorEventListener {
 
 
     private lateinit var mMap: GoogleMap
-    private var originMarkers = arrayListOf<Marker>()
+    private var currentLocation = arrayListOf<Marker>()
     private var destinationMarkers = arrayListOf<Marker>()
     private var polylinePaths = arrayListOf<Polyline>()
     private var destination = ""
@@ -64,7 +58,7 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
     ): View? {
         sm = activity!!.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_google_map, container, false)
+        val view = inflater.inflate(R.layout.fragment_map, container, false)
         val mapFragment = childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
         geoCoder = Geocoder(context!!)
@@ -93,12 +87,6 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
 
     }
 
-    private fun startLocationUpdates() {
-        val locationRequest = LocationRequest.create()
-        fusedLocationClient.requestLocationUpdates(locationRequest,
-            locationCallback,
-            Looper.getMainLooper())
-    }
 
     private fun sendRequest(origin: String) {
         try {
@@ -108,14 +96,16 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
         }
     }
 
-    override fun onMapReady(p0: GoogleMap?) {
-        mMap = p0!!
-        mMap.isMyLocationEnabled = true
+    private fun startLocationUpdates() {
+        val locationRequest = LocationRequest.create()
+        fusedLocationClient.requestLocationUpdates(locationRequest,
+            locationCallback,
+            Looper.getMainLooper())
     }
 
     override fun onDirectionFinderStart() {
-        if (originMarkers.isNotEmpty()) {
-            for (marker in originMarkers) {
+        if (currentLocation.isNotEmpty()) {
+            for (marker in currentLocation) {
                 marker.remove()
             }
         }
@@ -135,7 +125,7 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
 
     override fun onDirectionFinderSuccess(routeList: List<Route>) {
         polylinePaths = ArrayList()
-        originMarkers = ArrayList()
+        currentLocation = ArrayList()
         destinationMarkers = ArrayList()
 
         for (route in routeList) {
@@ -147,10 +137,10 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
 
 
 
-            DataTemp.distance = distanceText.text.toString()
+            MarathonData.distance = distanceText.text.toString()
 
 
-            originMarkers.add(
+            currentLocation.add(
                 mMap.addMarker(
                     MarkerOptions()
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.start_blue))
@@ -176,6 +166,11 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
         }
     }
 
+    override fun onMapReady(p0: GoogleMap?) {
+        mMap = p0!!
+        mMap.isMyLocationEnabled = true
+    }
+
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
 
     }
@@ -183,8 +178,15 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
     override fun onSensorChanged(p0: SensorEvent) {
         if(running) {
             current_step_value.text = p0.values[0].toString()
-            DataTemp.stepCount = p0.values[0]
+            MarathonData.stepCount = p0.values[0]
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        running = false
+        sm.unregisterListener(this)
+
     }
 
     override fun onResume() {
@@ -196,12 +198,5 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
             sm.registerListener(this, stepsSensor, SensorManager.SENSOR_DELAY_UI)
 
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        running = false
-        sm.unregisterListener(this)
-
     }
 }

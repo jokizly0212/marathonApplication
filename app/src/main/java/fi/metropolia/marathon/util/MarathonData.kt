@@ -1,6 +1,6 @@
 package fi.metropolia.marathon.util
 
-object DataTemp {
+object MarathonData {
     var userName: String = ""
     var age: Int = 0
     var weight: Double = 0.0

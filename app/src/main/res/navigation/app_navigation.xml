@@ -9,7 +9,7 @@
         android:id="@+id/requestsFragment"
         android:name="fi.metropolia.marathon.view.RequestsFragment"
         android:label="fragment_requests"
-        tools:layout="@layout/fragment_requests" >
+        tools:layout="@layout/fragment_events" >
         <action
             android:id="@+id/action_requestsFragment_to_requestDetail"
             app:destination="@id/requestDetail" />
@@ -38,7 +38,7 @@
         android:id="@+id/googleMapFragment"
         android:name="fi.metropolia.marathon.view.GoogleMapFragment"
         android:label="fragment_google_map"
-        tools:layout="@layout/fragment_google_map" >
+        tools:layout="@layout/fragment_map" >
         <argument
             android:name="detination"
             app:argType="string"
@@ -49,9 +49,9 @@
     </fragment>
     <fragment
         android:id="@+id/finishFragment"
-        android:name="fi.metropolia.marathon.view.FinishFragment"
+        android:name="fi.metropolia.marathon.view.StatsFragment"
         android:label="fragment_finish"
-        tools:layout="@layout/fragment_finish" >
+        tools:layout="@layout/fragment_stats" >
         <action
             android:id="@+id/action_finishFragment_to_requestsFragment"
             app:destination="@id/requestsFragment" />

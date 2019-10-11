@@ -11,7 +11,7 @@ import fi.metropolia.marathon.databinding.RequestItemBinding
 import fi.metropolia.marathon.model.Request
 
 class RequestListAdapter(private val requestList: ArrayList<Request>):
-    RecyclerView.Adapter<RequestListAdapter.RequestViewHolder>(), RequestClickListener {
+    RecyclerView.Adapter<RequestListAdapter.RequestViewHolder>(), EventClickListener {
 
     fun updateRequestList(newRequestList: List<Request>) {
         requestList.clear()

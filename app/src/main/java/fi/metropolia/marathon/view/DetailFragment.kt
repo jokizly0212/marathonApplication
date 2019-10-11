@@ -10,17 +10,17 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import fi.metropolia.marathon.R
-import fi.metropolia.marathon.databinding.FragmentRequestDetailBinding
-import fi.metropolia.marathon.util.DataTemp
+import fi.metropolia.marathon.databinding.FragmentEventDetailBinding
+import fi.metropolia.marathon.util.MarathonData
 import fi.metropolia.marathon.viewmodel.DetailViewModel
-import kotlinx.android.synthetic.main.fragment_request_detail.*
+import kotlinx.android.synthetic.main.fragment_event_detail.*
 
 class DetailFragment : Fragment() {
 
     private lateinit var viewModel: DetailViewModel
     private var requestId = 0
 
-    private lateinit var dataBinding: FragmentRequestDetailBinding
+    private lateinit var dataBinding: FragmentEventDetailBinding
 
 
     override fun onCreateView(
@@ -28,7 +28,7 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        dataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_request_detail, container, false)
+        dataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_event_detail, container, false)
         return dataBinding.root
     }
 
@@ -59,11 +59,11 @@ class DetailFragment : Fragment() {
                 startPointText.text = it.startPoint
                 endPointText.text = it.endPoint
 
-                DataTemp.eventName = it.name
-                DataTemp.startDate = it.startDate
-                DataTemp.description = it.description
-                DataTemp.startPoint = it.startPoint
-                DataTemp.endPoint = it.endPoint
+                MarathonData.eventName = it.name
+                MarathonData.startDate = it.startDate
+                MarathonData.description = it.description
+                MarathonData.startPoint = it.startPoint
+                MarathonData.endPoint = it.endPoint
 
             }
         })

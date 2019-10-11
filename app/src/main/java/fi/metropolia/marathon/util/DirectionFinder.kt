@@ -5,7 +5,7 @@ import com.google.android.gms.maps.model.LatLng
 import fi.metropolia.marathon.model.Distance
 import fi.metropolia.marathon.model.Duration
 import fi.metropolia.marathon.model.Route
-import fi.metropolia.marathon.view.DirectionFinderListener
+import fi.metropolia.marathon.view.NavigationListener
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -16,7 +16,7 @@ import java.net.MalformedURLException
 import java.net.URL
 import java.net.URLEncoder
 
-class DirectionFinder(internal val listener: DirectionFinderListener, private val origin: String, private val destination: String) {
+class DirectionFinder(internal val listener: NavigationListener, private val origin: String, private val destination: String) {
     private val DIRECTION_URL_API = "https://maps.googleapis.com/maps/api/directions/json?"
     private val GOOGLE_API_KEY = "AIzaSyA3dPLT5lFjTHoK26gjor6DquLwKFyJlnI"
 

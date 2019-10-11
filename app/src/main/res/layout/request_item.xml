@@ -11,7 +11,7 @@
             type="Integer" />
         <variable
             name="listener"
-            type="fi.metropolia.marathon.view.RequestClickListener" />
+            type="fi.metropolia.marathon.view.EventClickListener" />
     </data>
 
 

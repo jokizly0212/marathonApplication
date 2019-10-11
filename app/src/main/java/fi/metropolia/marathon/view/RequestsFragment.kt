@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import fi.metropolia.marathon.R
 import fi.metropolia.marathon.viewmodel.RequestViewModel
-import kotlinx.android.synthetic.main.fragment_requests.*
+import kotlinx.android.synthetic.main.fragment_events.*
 
 class RequestsFragment : Fragment() {
 
@@ -23,7 +23,7 @@ class RequestsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_requests, container, false)
+        return inflater.inflate(R.layout.fragment_events, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

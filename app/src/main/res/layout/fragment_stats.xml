@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="fi.metropolia.marathon.view.FinishFragment">
+    tools:context="fi.metropolia.marathon.view.StatsFragment">
 
     <ImageView
         android:id="@+id/top_title"

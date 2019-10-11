@@ -8,7 +8,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //Reset theme after splash screen
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.marathonTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
