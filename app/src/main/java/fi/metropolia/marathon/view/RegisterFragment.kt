@@ -14,6 +14,8 @@ import fi.metropolia.marathon.util.MarathonData
 import fi.metropolia.marathon.viewmodel.RegisterViewModel
 import kotlinx.android.synthetic.main.fragment_getting_started.*
 
+/*User register fragment*/
+
 class RegisterFragment: Fragment() {
 
 

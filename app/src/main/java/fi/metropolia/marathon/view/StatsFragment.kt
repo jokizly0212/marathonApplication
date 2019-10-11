@@ -10,6 +10,8 @@ import fi.metropolia.marathon.R
 import fi.metropolia.marathon.util.MarathonData
 import kotlinx.android.synthetic.main.fragment_stats.*
 
+/*Fragment to show information when user finish event marathon*/
+
 class StatsFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

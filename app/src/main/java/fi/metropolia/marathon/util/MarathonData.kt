@@ -1,5 +1,7 @@
 package fi.metropolia.marathon.util
 
+/*Use singleton to handle all Data of the app*/
+
 object MarathonData {
     var userName: String = ""
     var age: Int = 0

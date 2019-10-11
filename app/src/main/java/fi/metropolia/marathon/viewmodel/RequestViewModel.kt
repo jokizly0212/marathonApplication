@@ -11,6 +11,8 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
 
+/*View model for request event of marathon screen*/
+
 class RequestViewModel(application: Application) : BaseViewModel(application) {
     private val requestsApiService = RequestsApiService()
     private val requestDao = MarathonDatabase(getApplication()).requestDao()

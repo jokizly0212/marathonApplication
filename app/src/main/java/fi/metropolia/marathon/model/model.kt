@@ -1,12 +1,12 @@
 package fi.metropolia.marathon.model
 
-import androidx.room.Embedded
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.Relation
 import com.google.android.gms.maps.model.LatLng
 import com.google.gson.annotations.SerializedName
 
+/* Request Event of Marathon entity*/
 @Entity
 data class Request(
     @PrimaryKey
@@ -28,6 +28,8 @@ data class Request(
     val image_url: String
 )
 
+/* User entity*/
+
 @Entity
 data class User(
     @PrimaryKey
@@ -37,6 +39,8 @@ data class User(
     val height: Double,
     val address: String
 )
+
+/*Route is used for google map*/
 class Route {
     var distance: Distance? = null
     var duration: Duration? = null

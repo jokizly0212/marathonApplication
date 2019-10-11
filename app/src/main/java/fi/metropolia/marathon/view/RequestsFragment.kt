@@ -13,6 +13,8 @@ import fi.metropolia.marathon.R
 import fi.metropolia.marathon.viewmodel.RequestViewModel
 import kotlinx.android.synthetic.main.fragment_events.*
 
+/*fragment to show event list*/
+
 class RequestsFragment : Fragment() {
 
     private val requestAdapter = RequestListAdapter(arrayListOf())

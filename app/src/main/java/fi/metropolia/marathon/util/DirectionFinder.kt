@@ -16,6 +16,8 @@ import java.net.MalformedURLException
 import java.net.URL
 import java.net.URLEncoder
 
+/*Make a request to Google Map API use AsyncTask */
+
 class DirectionFinder(internal val listener: NavigationListener, private val origin: String, private val destination: String) {
     private val DIRECTION_URL_API = "https://maps.googleapis.com/maps/api/directions/json?"
     private val GOOGLE_API_KEY = "AIzaSyA3dPLT5lFjTHoK26gjor6DquLwKFyJlnI"

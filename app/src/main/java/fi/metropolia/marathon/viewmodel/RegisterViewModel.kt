@@ -8,6 +8,8 @@ import fi.metropolia.marathon.model.MarathonDatabase
 import fi.metropolia.marathon.model.User
 import kotlinx.coroutines.launch
 
+/*View model for user register screen*/
+
 class RegisterViewModel(application: Application): BaseViewModel(application) {
     private val userDao = MarathonDatabase(getApplication()).userDao()
 

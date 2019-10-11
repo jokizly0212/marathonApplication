@@ -15,6 +15,7 @@ import fi.metropolia.marathon.util.MarathonData
 import fi.metropolia.marathon.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.fragment_event_detail.*
 
+/*Fragment to show detail of Events*/
 class DetailFragment : Fragment() {
 
     private lateinit var viewModel: DetailViewModel

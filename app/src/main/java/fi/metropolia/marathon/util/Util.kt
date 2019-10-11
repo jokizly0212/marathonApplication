@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import fi.metropolia.marathon.R
 
-
+/*Loading circle for image*/
 fun getProgressDrawable(context: Context): CircularProgressDrawable {
     return CircularProgressDrawable(context).apply {
         strokeWidth = 10f
@@ -17,6 +17,7 @@ fun getProgressDrawable(context: Context): CircularProgressDrawable {
     }
 }
 
+/*Loading image*/
 fun ImageView.loadImage(uri: String?, progressDrawable: CircularProgressDrawable) {
     val options = RequestOptions()
         .placeholder(progressDrawable)

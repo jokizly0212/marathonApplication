@@ -31,7 +31,7 @@ import fi.metropolia.marathon.util.MarathonData
 
 
 
-
+/*show Google Map, direction, internal sensor: TYPE_STEP_COUNTER*/
 
 class GoogleMapFragment : Fragment(), OnMapReadyCallback, NavigationListener ,
     SensorEventListener {

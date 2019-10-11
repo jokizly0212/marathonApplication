@@ -10,6 +10,8 @@ import fi.metropolia.marathon.R
 import fi.metropolia.marathon.databinding.RequestItemBinding
 import fi.metropolia.marathon.model.Request
 
+/*custom adapter for request event of marathon list, use recycler view*/
+
 class RequestListAdapter(private val requestList: ArrayList<Request>):
     RecyclerView.Adapter<RequestListAdapter.RequestViewHolder>(), EventClickListener {
 

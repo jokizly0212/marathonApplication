@@ -4,6 +4,8 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 
+/*Access request Event of Marathon database*/
+
 @Dao
 interface RequestDao {
     @Insert
