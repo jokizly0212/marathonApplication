@@ -190,10 +190,10 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
     override fun onResume() {
         super.onResume()
         running = true
-        var stepsSensor = sm?.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
+        var stepsSensor = sm.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
 
         if (stepsSensor != null) {
-            sm?.registerListener(this, stepsSensor, SensorManager.SENSOR_DELAY_UI)
+            sm.registerListener(this, stepsSensor, SensorManager.SENSOR_DELAY_UI)
 
         }
     }
@@ -201,7 +201,7 @@ class GoogleMapFragment : Fragment(), OnMapReadyCallback, DirectionFinderListene
     override fun onPause() {
         super.onPause()
         running = false
-        sm?.unregisterListener(this)
+        sm.unregisterListener(this)
 
     }
 }

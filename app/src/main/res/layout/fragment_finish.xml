@@ -19,13 +19,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/titlebg"
-        android:scaleType="fitEnd"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -35,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/your_stats"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
@@ -50,6 +56,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
+        android:textColor="@color/colorBlack"
         android:text="@string/userName"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +81,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/age"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextTitle" />
@@ -97,6 +105,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/weight"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageTextTitle" />
@@ -120,6 +129,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/height"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weighTextTitle" />
@@ -143,6 +153,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/address"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heightTextTitle" />
@@ -166,6 +177,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/eventName"
+        android:textColor="@color/colorBlack"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -179,6 +191,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/eventStartDate"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventNameValue" />
@@ -216,6 +229,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/eventStartPoint"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTextValue" />
@@ -238,6 +252,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:textColor="@color/colorBlack"
         android:text="@string/eventEndPoint"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
